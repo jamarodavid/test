@@ -1,7 +1,7 @@
 Web : curl, http, wget, Way back machine, internet archive, john the ripper, hashcat, Sql inject, xss, cookies
 Cyrpto : dcode, cipher identifier, another Cipher decoder, substitution solver
 Forensic : Forensically, Exiftool, png check, foremost, hexedit
-Stegano : Zsteg, steghide, future boy, stegonline
+Stegano : Zsteg, steghide, future boy, stegonline, binwalk
 OSINT : Osint Framework, viewdns, whois
 Misc : Campuran udah
 
