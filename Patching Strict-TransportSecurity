@@ -1,0 +1,19 @@
+Pastikan modul headers telah diaktifkan di server Apache Anda. 
+Anda dapat melakukannya dengan perintah berikut di terminal:
+
+sudo yum install mod_ssl
+sudo systemctl restart httpd
+
+Edit File Konfigurasi Apache:
+Buka atau buat file konfigurasi Apache yang relevan. Misalnya:
+
+sudo nano /etc/httpd/conf/httpd.conf
+
+Tambahkan Konfigurasi Header HSTS:
+<IfModule mod_headers.c>
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+
+simpan dan Restart Apache:
+sudo systemctl restart httpd
