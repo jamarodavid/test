@@ -1,0 +1,12 @@
+-Edit file konfigurasi apache
+
+sudo nano /etc/httpd/conf/httpd.conf
+
+
+-Tambahkan Konfigurasi Header
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
+
+-Simpan dan Restart Apache
+sudo systemctl restart httpd
