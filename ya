@@ -17,3 +17,14 @@ Misc : Campuran udah
 - Ettercap
 - OCLHashCat
 
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteCond %{REQUEST_URI} ^(.*)admin(.*)$
+    RewriteCond %{REMOTE_ADDR} !^192\.168\.1\.65$ [OR] ## IP Addr
+    RewriteRule .* / [R=302,L]
+    <LocationMatch "/administrator">
+        SecRuleEngine DetectionOnly
+    </LocationMatch>
+</IfModule>
+
+
