@@ -49,16 +49,26 @@ alert tcp any any -> any 80 (msg: "UNION SELECT SQL Injection"; content: "union"
 ## Detect XSS Header Attack
 Konfigurasi snort mendeteksi serangan XSS
 
-alert tcp any any -> any any \
-( \
-  msg: "XSS Back Button Detected"; \
-  content: "Referer"; \
-  http_header; \
-  pcre: "/(;)+[^\n]+(;)/i"; \
-  sid:111; \
-)
+alert tcp any any -> any 80 (msg:"XSS Detected"; content:"<script>"; http_client_body; sid:111;)
+
 
 -----------------------------------------------------------------------------------------------------------------
+## ALL
+alert icmp any any -> $HOME_NET any (msg:"ICMP connection attempt";sid:1000001;rev:1;classtype:icmp-event;)
+alert tcp any any -> any 80 (msg: "Error Based SQL Injection Detected"; content: "%27" ; sid:100000011; )
+alert tcp any any -> any 80 (msg: "Error Based SQL Injection Detected"; content: "22" ; sid:100000012; )
+alert tcp any any -> any 80 (msg: "AND SQL Injection Detected"; content: "and" ; nocase; sid:100000060; )
+alert tcp any any -> any 80 (msg: "OR SQL Injection Detected"; content: "or" ; nocase; sid:100000061; )
+alert tcp any any -> any 80 (msg: "AND SQL Injection Detected"; content: "and" ; nocase; sid:100000008; )
+alert tcp any any -> any 80 (msg: "OR SQL Injection Detected"; content: "or" ; nocase; sid:100000009; )
+alert tcp any any -> any 80 (msg: "Form Based SQL Injection Detected"; content: "%27" ; sid:1000003; )
+alert tcp any any -> any 80 (msg: "Order by SQL Injection"; content: "order" ; sid:1000005; )
+alert tcp any any -> any 80 (msg: "UNION SELECT SQL Injection"; content: "union" ; sid:1000006; )
+alert tcp any any -> any 80 (msg:"XSS Detected"; content:"<script>"; http_client_body; sid:111;)
+
+
+
+
 # Jangan lupa runnya pakai : 
 
 # sudo snort -A console -q -u snort -g snort -c /etc/snort/snort.conf -i enp0s8
