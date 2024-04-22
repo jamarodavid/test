@@ -117,17 +117,21 @@ Membuat file adminPage.conf:
 # nano /etc/httpd/conf.d/adminPage.conf
 
 
-Masukkan konfigurasi sebagai berikut:
+# Masukkan konfigurasi sebagai berikut:
 
 <IfModule mod_rewrite.c>
-        RewriteEngine on
-        RewriteCond %{REQUEST_URI} ^(.*)admin(.*)$
-        RewriteCond %{REMOTE_ADDR} !^192\.168\.1\.65$ ## IP Addr
-        RewriteRule .* / [R=302,L]
-        <LocationMatch "/administrator">
-                SecRuleEngine   DetectionOnly
-        </LocationMatch>
+    RewriteEngine on
+    RewriteCond %{REQUEST_URI} ^(.*)admin(.*)$
+    RewriteCond %{REMOTE_ADDR} !^192\.168\.1\.65$ [OR] ## IP Addr
+    RewriteRule .* / [R=302,L]
+    <LocationMatch "/administrator">
+        SecRuleEngine DetectionOnly
+    </LocationMatch>
 </IfModule>
+
+
+
+
 
 
 
