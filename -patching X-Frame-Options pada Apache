@@ -1,0 +1,17 @@
+-Edit file konfigurasi apache
+
+sudo nano /etc/httpd/conf/httpd.conf
+
+
+-Tambahkan Konfigurasi Header X-Frame-Options:
+<IfModule mod_headers.c>
+    Header always append X-Frame-Options SAMEORIGIN
+</IfModule>
+Dalam contoh ini, kami menggunakan nilai SAMEORIGIN yang menginstruksikan browser untuk
+mengizinkan framing hanya dari
+halaman dengan asal yang sama. Namun, Anda juga dapat menggunakan nilai
+DENY untuk melarang framing dari semua sumber.
+
+
+-Simpan dan Restart Apache
+sudo systemctl restart httpd
