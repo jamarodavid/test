@@ -1,0 +1,8 @@
+Analisa dan Pengambilan Kesimpulan dari Log Failed Login Sistem Operasi centos 7:
+# sudo grep "Failed password" /var/log/secure
+
+Analisa dan pengambilan kesimpulan dari Log SQL Injection Apache:
+# cat /var/log/httpd/access_log
+
+Analisa dan pengambilan Kesimpulan dari Log Reverse Shell Apache dan Log Cross Scripting Apache:
+# cat /var/log/httpd/error_log
