@@ -1,0 +1,13 @@
+Edit File Konfigurasi Apache:
+
+sudo nano /etc/httpd/conf/httpd.conf
+
+Tambahkan Konfigurasi CSP:
+
+<IfModule mod_headers.c>
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self';"
+</IfModule>
+
+Simpan dan Restart Apache:
+
+sudo systemctl restart httpd
