@@ -1,0 +1,10 @@
+Edit File Konfigurasi Apache:
+sudo nano /etc/httpd/conf/httpd.conf
+
+Tambahkan Konfigurasi Permissions-Policy:
+<IfModule mod_headers.c>
+    Header always set Permissions-Policy "camera=(self), microphone=(self)"
+</IfModule>
+
+simpan dan restart web server:
+sudo systemctl restart httpd
