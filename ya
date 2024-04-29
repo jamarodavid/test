@@ -1,30 +1,37 @@
-Web : curl, http, wget, Way back machine, internet archive, john the ripper, hashcat, Sql inject, xss, cookies
-Cyrpto : dcode, cipher identifier, another Cipher decoder, substitution solver
-Forensic : Forensically, Exiftool, png check, foremost, hexedit
-Stegano : Zsteg, steghide, future boy, stegonline, binwalk
-OSINT : Osint Framework, viewdns, whois
-Misc : Campuran udah
+Online Tools :
+- Web : curl, http, wget, Way back machine, internet archive, john the ripper, hashcat, Sql inject, xss, cookies
+- Cyrpto : dcode, cipher identifier, another Cipher decoder, substitution solver
+- Forensic : Forensically, Exiftool, png check, foremost, hexedit
+- Stegano : Zsteg, steghide, future boy, stegonline, binwalk
+- OSINT : Osint Framework, viewdns, whois
+- Misc : Campuran udah
 
+Installed/CLI Tools :
+- BurpSuite
+- Stegsolve
+- Exiftools
+- Python3
+- HackBar
+- Cookie Editor
+- IDA Pro
+- Nmap
+- Netcat
+- Imagemagick
+- Wireshark
+- PDF/ZIP Cracker
+- Wordlist [rockyou.txt]
 
-- Maltego
-- NMAP
-- Nikto
-- WireShark
-- Cain & Able
-- Metasploit
-- Social Engginer Toolkit
-- John the Ripper
-- Ettercap
-- OCLHashCat
+Pentest/Black Hat Tools :
+- Phoneinfoga
+- Osintgram
+- Beef
+- L3MON
+- AndroRAT
+- Sherlock
+- Zphiser
+- SQLMap
 
-<IfModule mod_rewrite.c>
-    RewriteEngine on
-    RewriteCond %{REQUEST_URI} ^(.*)admin(.*)$
-    RewriteCond %{REMOTE_ADDR} !^192\.168\.1\.65$ [OR] ## IP Addr
-    RewriteRule .* / [R=302,L]
-    <LocationMatch "/administrator">
-        SecRuleEngine DetectionOnly
-    </LocationMatch>
-</IfModule>
-
-
+Defend/Blue Team : 
+- Snort
+- ModSecurity
+- IDA Pro
